@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação - Oroïto Sounds</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+                <div class="logo-icon">OS</div>
+                <div>
+                    <div class="logo-text">Oroïto Sounds</div>
+                    <div class="logo-subtitle">AUTHORIZED TIMELINE EQUIPMENT</div>
+                </div>
+            </a>
+        </div>
+        <nav>
+    <ul>
+        <li><a href="index.html">Equipamentos</a></li>
+        <li><a href="documentacao.html" class="active">Documentação</a></li>
+        <li><a href="aprovacoes.html">Aprovações</a></li>
+    </ul>
+</nav>
+        <div class="header-icons">
+            <i class="fas fa-search"></i>
+            <div style="position: relative;">
+                <i class="fas fa-shopping-bag" id="cart-icon"></i>
+                <div class="cart-count" id="cart-count">0</div>
+            </div>
+            <i class="fas fa-user"></i>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <h1>DOCUMENTAÇÃO TÉCNICA</h1>
+        <div class="hero-subtitle">MANUAIS E PROTOCOLOS AUTORIZADOS PELA TVA</div>
+        <p>Acesso completo à documentação técnica, manuais de operação e protocolos de segurança temporal para todos os equipamentos Oroïto Sounds.</p>
+    </section>
+
+    <!-- Documentation Navigation -->
+    <section class="docs-nav">
+        <div class="container">
+            <div class="docs-categories">
+                <button class="docs-category active" data-category="manuals">Manuais de Operação</button>
+                <button class="docs-category" data-category="protocols">Protocolos de Segurança</button>
+                <button class="docs-category" data-category="regulations">Regulamentos TVA</button>
+                <button class="docs-category" data-category="technical">Especificações Técnicas</button>
+                <button class="docs-category" data-category="forms">Formulários</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Content -->
+    <section class="docs-content">
+        <div class="container">
+            <div class="docs-sidebar">
+                <div class="docs-search">
+                    <input type="text" placeholder="Buscar na documentação..." class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="docs-menu" id="docs-menu">
+                    <!-- Menu será gerado via JavaScript -->
+                </div>
+            </div>
+            
+            <div class="docs-main">
+                <div class="docs-section active" id="manuals">
+                    <h2>Manuais de Operação</h2>
+                    <div class="docs-grid">
+                        <div class="doc-card">
+                            <div class="doc-icon">
+                                <i class="fas fa-headphones"></i>
+                            </div>
+                            <h3>Manual Fones Temporais T-1971</h3>
+                            <p>Guia completo de operação para fones de ouvido com cancelamento de ruído dimensional.</p>
+                            <a href="#" class="doc-download">
+                                <i class="fas fa-download"></i>
+                                Baixar PDF
+                            </a>
+                        </div>
+                        <div class="doc-card">
+                            <div class="doc-icon">
+                                <i class="fas fa-volume-up"></i>
+                            </div>
+                            <h3>Sistema de Som Dimensional T-1984</h3>
+                            <p>Manual de instalação e operação para sistemas de projeção acústica multidimensional.</p>
+                            <a href="#" class="doc-download">
+                                <i class="fas fa-download"></i>
+                                Baixar PDF
+                            </a>
+                        </div>
+                        <div class="doc-card">
+                            <div class="doc-icon">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <h3>Console Temporal T-1999</h3>
+                            <p>Documentação técnica completa para consoles de controle de áudio multitemporal.</p>
+                            <a href="#" class="doc-download">
+                                <i class="fas fa-download"></i>
+                                Baixar PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="docs-section" id="protocols">
+                    <h2>Protocolos de Segurança Temporal</h2>
+                    <div class="protocol-list">
+                        <div class="protocol-item">
+                            <h3>Protocolo 001: Inicialização Segura</h3>
+                            <p>Procedimentos para inicialização segura de equipamentos em diferentes linhas temporais.</p>
+                            <span class="protocol-level">Nível de Segurança: ALTO</span>
+                        </div>
+                        <div class="protocol-item">
+                            <h3>Protocolo 002: Manutenção Temporal</h3>
+                            <p>Diretrizes para manutenção preventiva em ambientes com variação temporal.</p>
+                            <span class="protocol-level">Nível de Segurança: MÉDIO</span>
+                        </div>
+                        <div class="protocol-item">
+                            <h3>Protocolo 003: Emergências Temporais</h3>
+                            <p>Procedimentos de emergência para falhas de equipamento durante viagens temporais.</p>
+                            <span class="protocol-level">Nível de Segurança: CRÍTICO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Equipamentos</h4>
+                <ul>
+                    <li><a href="produtos.html">Áudio Temporal</a></li>
+                    <li><a href="produtos.html">Sistemas de Monitoramento</a></li>
+                    <li><a href="produtos.html">Dispositivos Portáteis</a></li>
+                    <li><a href="produtos.html">Acessórios Autorizados</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Documentação</h4>
+                <ul>
+                    <li><a href="documentacao.html">Manuais Temporais</a></li>
+                    <li><a href="documentacao.html">Protocolos de Uso</a></li>
+                    <li><a href="documentacao.html">Regulamentos TVA</a></li>
+                    <li><a href="documentacao.html">Formulários de Solicitação</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Autoridade Temporal</h4>
+                <ul>
+                    <li><a href="linha-do-tempo.html">Sobre a TVA</a></li>
+                    <li><a href="aprovacoes.html">Carreiras</a></li>
+                    <li><a href="linha-do-tempo.html">Missão Temporal</a></li>
+                    <li><a href="linha-do-tempo.html">Fluxo Temporal Sagrado</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Canais Autorizados</h4>
+                <p>Para comunicações temporais aprovadas</p>
+                <div class="social-icons">
+                    <i class="fab fa-temporal"></i>
+                    <i class="fas fa-time-circle"></i>
+                    <i class="fas fa-hourglass-half"></i>
+                    <i class="fas fa-infinity"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Oroïto Sounds Temporal Division - Autoridade de Variância Temporal | Todo equipamento está em conformidade com o Fluxo Temporal Sagrado</p>
+        </div>
+    </footer>
+
+    <!-- Selo TVA -->
+    <div class="tva-stamp">APROVADO<br>PELA<br>TVA</div>
+
+    <script src="js/documentation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oroïto Sounds - Divisão Temporal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .spline-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            background-color: #f5f1e6;
+            margin-top: 50px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.5s ease-in-out;
+        }
+        
+        .spline-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .spline-section.fade-out {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        
+        .spline-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .spline-container spline-viewer {
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        .spacer {
+            height: 30px;
+            background: transparent;
+        }
+        
+        /* Desativa scroll na seção Spline */
+        .spline-section {
+            overscroll-behavior: none;
+            touch-action: none;
+        }
+        
+        /* Efeito fade para a seção de produtos */
+        .products {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.5s ease-in-out 0.3s;
+        }
+        
+        .products.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Hero section com fade-in */
+        .hero {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <div class="logo-icon">OS</div>
+            <div>
+                <div class="logo-text">Oroïto Sounds</div>
+                <div class="logo-subtitle">AUTHORIZED TIMELINE EQUIPMENT</div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#equipamentos">Equipamentos</a></li>
+                <li><a href="documentacao.html">Documentação</a></li>
+                <li><a href="aprovacoes.html">Aprovações</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <i class="fas fa-search"></i>
+            <div style="position: relative;">
+                <i class="fas fa-shopping-bag" id="cart-icon"></i>
+                <div class="cart-count" id="cart-count">0</div>
+            </div>
+            <i class="fas fa-user"></i>
+        </div>
+    </header>
+
+    <!-- Hero Section com Conteúdo Textual (PRIMEIRO) -->
+    <section class="hero">
+        <h1>ÁUDIO TEMPORAL</h1>
+        <div class="hero-subtitle">TECNOLOGIA QUE TRANSCENDE ERAS</div>
+        <p>Equipamento de áudio que transcende as barreiras do tempo. Tecnologia avançada mantendo a integridade sonora através de diferentes dimensões.</p>
+        <button class="cta-button">SOLICITAR AUTORIZAÇÃO</button>
+    </section>
+
+    <!-- Espaço entre as seções -->
+    <div class="spacer"></div>
+
+    <!-- Seção Spline (Apresentação Visual - DEPOIS) -->
+    <section class="spline-section" id="spline-section">
+        <div class="spline-container">
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.82/build/spline-viewer.js"></script>
+            <spline-viewer 
+                url="https://prod.spline.design/5nG0oSwfDlmdj61H/scene.splinecode"
+                loading="eager"
+            ></spline-viewer>
+        </div>
+    </section>
+
+    <!-- Produtos -->
+    <section class="products" id="equipamentos">
+        <h2 class="section-title">EQUIPAMENTOS AUTORIZADOS</h2>
+        
+        <!-- Filtros de produtos -->
+        <div class="product-filters">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="headphones">Fones</button>
+            <button class="filter-btn" data-filter="speakers">Sistemas de Som</button>
+            <button class="filter-btn" data-filter="consoles">Consoles</button>
+            <button class="filter-btn" data-filter="microphones">Microfones</button>
+        </div>
+        
+        <div class="products-container">
+            <button class="scroll-arrow arrow-left" id="scroll-left">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="product-scroll" id="product-scroll">
+                <!-- Produtos serão carregados via JavaScript -->
+            </div>
+            
+            <button class="scroll-arrow arrow-right" id="scroll-right">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="scroll-indicators" id="scroll-indicators">
+            <!-- Indicadores serão gerados via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Equipamentos</h4>
+                <ul>
+                    <li><a href="#equipamentos">Áudio Temporal</a></li>
+                    <li><a href="#equipamentos">Sistemas de Monitoramento</a></li>
+                    <li><a href="#equipamentos">Dispositivos Portáteis</a></li>
+                    <li><a href="#equipamentos">Acessórios Autorizados</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Documentação</h4>
+                <ul>
+                    <li><a href="documentacao.html">Manuais Técnicos</a></li>
+                    <li><a href="documentacao.html">Protocolos de Uso</a></li>
+                    <li><a href="documentacao.html">Regulamentos</a></li>
+                    <li><a href="documentacao.html">Formulários de Solicitação</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="aprovacoes.html">Sobre Nós</a></li>
+                    <li><a href="aprovacoes.html">Carreiras</a></li>
+                    <li><a href="aprovacoes.html">Missão</a></li>
+                    <li><a href="aprovacoes.html">Certificações</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Canais Oficiais</h4>
+                <p>Para comunicações e suporte</p>
+                <div class="social-icons">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-linkedin"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Oroïto Sounds Temporal Division | Todo equipamento está em conformidade com os mais altos padrões de qualidade</p>
+        </div>
+    </footer>
+
+    <!-- Carrinho de Compras -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-header">
+            <h3 class="cart-title">CARRINHO</h3>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Itens do carrinho serão inseridos aqui -->
+        </div>
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>TOTAL:</span>
+                <span id="cart-total">0,00 UT</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">FINALIZAR COMPRA</button>
+        </div>
+    </div>
+
+    <!-- Selo de Aprovação -->
+    <div class="tva-stamp">APROVADO<br>QUALIDADE<br>GARANTIDA</div>
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Controlador de efeitos fade entre seções
+        document.addEventListener('DOMContentLoaded', function() {
+            const splineSection = document.getElementById('spline-section');
+            const productsSection = document.getElementById('equipamentos');
+            
+            function handleScroll() {
+                const splineRect = splineSection.getBoundingClientRect();
+                const productsRect = productsSection.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                // Animação da seção Spline - aparece quando entra na viewport
+                if (splineRect.top < windowHeight * 0.8 && splineRect.bottom > 0) {
+                    splineSection.classList.add('visible');
+                    splineSection.classList.remove('fade-out');
+                } else {
+                    splineSection.classList.remove('visible');
+                }
+                
+                // Animação da seção de produtos - aparece quando a Spline começa a desaparecer
+                if (productsRect.top < windowHeight * 0.6) {
+                    productsSection.classList.add('visible');
+                    splineSection.classList.add('fade-out');
+                } else {
+                    productsSection.classList.remove('visible');
+                }
+            }
+            
+            // Inicializar observador de scroll
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Verificar estado inicial
+            
+            // Também ativar por Intersection Observer para melhor performance
+            const observerOptions = {
+                threshold: [0, 0.3, 0.7, 1],
+                rootMargin: '0px 0px -100px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.target === splineSection) {
+                        if (entry.intersectionRatio > 0.3) {
+                            entry.target.classList.add('visible');
+                            entry.target.classList.remove('fade-out');
+                        } else if (entry.intersectionRatio < 0.1) {
+                            entry.target.classList.remove('visible');
+                        }
+                    }
+                    
+                    if (entry.target === productsSection) {
+                        if (entry.intersectionRatio > 0.3) {
+                            entry.target.classList.add('visible');
+                            splineSection.classList.add('fade-out');
+                        } else {
+                            entry.target.classList.remove('visible');
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            observer.observe(splineSection);
+            observer.observe(productsSection);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 5%;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 5px 10px;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .tva-stamp {
+        width: 60px;
+        height: 60px;
+        font-size: 10px;
+    }
+    
+    .cart-modal {
+        width: 100%;
+    }
+    
+    .product-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .scroll-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .arrow-left {
+        left: 10px;
+    }
+    
+    .arrow-right {
+        right: 10px;
+    }
+    
+    .product-card {
+        min-width: 260px;
+        height: 450px;
+        padding: 15px;
+    }
+    
+    .product-card img {
+        height: 130px;
+    }
+    
+    .product-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .product-card p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        min-width: 240px;
+        height: 380px;
+    }
+    
+    .product-card img {
+        height: 120px;
+    }
+    
+    .product-filters {
+        gap: 8px;
+    }
+    
+    .filter-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}

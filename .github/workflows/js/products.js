@@ -1,0 +1,1 @@
+console.log('Funções de produtos movidas para main.js');
